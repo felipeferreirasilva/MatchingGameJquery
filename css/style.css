@@ -1,0 +1,57 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+header {
+    margin-top: 2%;
+}
+
+.card {
+    width: 130px;
+    height: 130px;
+    background-color: #2e3d49;
+    border-radius: 10px;
+    margin: 25% 0 0 0;
+    cursor: pointer;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+#game {
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    width: 680px;
+    min-height: 680px;
+    height: 680px;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+#game i {
+    color: white;
+    margin: auto 0;
+    text-align: center;
+}
+
+#game-end i {
+    color: limegreen;
+}
+
+#game-end {
+    width: 680px;
+    min-height: 680px;
+    height: 680px;
+}
+
+.show-card {
+    background-color: #02ccba;
+    cursor: default;
+    pointer-events: none;
+}
+
+.wrong-card {
+    background-color: #f55a3d;
+}
+
+h3 {
+    text-align: center;
+}
