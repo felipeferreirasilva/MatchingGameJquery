@@ -15,15 +15,18 @@
 
 <body>
     <header class="container">
-        <h3>Matching Game</h3>
+        <h3 class="mb-3 mt-4">Matching Game</h3>
         <div class="row">
-            <div class="col text-center">
+            <div class="col text-right">
                 <i class="fas fa-star" id="star1"></i>
                 <i class="fas fa-star" id="star2"></i>
                 <i class="fas fa-star" id="star3"></i>
                 <p><span id="qtMov">0</span> Moves</p>
             </div>
             <div class="col text-center">
+                <h4 id="timer"><time>00:00:00</time></h4>
+            </div>
+            <div class="col text-left">
                 <div class="btn " id="restartGame">
                     <span>Restart</span>
                     <i class="fas fa-undo-alt"></i>
@@ -36,88 +39,88 @@
             <div class="row">
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3">
-                    <div class="card">
-                        <i class="fas fa-3x" hidden></i>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card">
-                        <i class="fas fa-3x" hidden></i>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card">
-                        <i class="fas fa-3x" hidden></i>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="card">
-                        <i class="fas fa-3x" hidden></i>
+                        <i class="fas fa-2x" hidden></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <i class="fas fa-2x" hidden></i>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <i class="fas fa-2x" hidden></i>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <i class="fas fa-2x" hidden></i>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <i class="fas fa-2x" hidden></i>
                     </div>
                 </div>
             </div>
@@ -128,7 +131,8 @@
         <i class="fas fa-4x fa-check mt-5 mb-5"></i>
         <h2>Congratulations! You Won!</h2>
         <h4>With <span id="qtMovFinal">0</span> Moves and <span id="qtStarsFinal">0</span> Stars.</h4>
-        <div id="playAgain" class="btn btn-success mt-3"><strong>Play Again!</strong></div>
+        <h4 class="mt-1">Time: <time id="timerFinal">00:00:00</time></h4>
+        <div id="playAgain" class="btn btn-success mt-4"><strong>Play Again!</strong></div>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

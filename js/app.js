@@ -3,7 +3,12 @@ let step = 1, // ARMAZENA PASSO PARA SABER QUAL CARTÃO FOI SELECIONADO (PRIMEIR
     totalMoves = 0, // ARMAZENA QUANTIDADE TOTAL DE MOVIMENTOS
     stars = 3, // ARMAZENA QUANTIDADE DE ESTRELAS
     cardsSelected = [], // ARRAY QUE ARMAZENA OS DOIS CARTÕES SELECIONADOS
-    icons = ["fa-bowling-ball", "fa-ambulance", "fa-bowling-ball", "fa-anchor", "fa-bath", "fa-bomb", "fa-bell", "fa-cut", "fa-crown", "fa-ambulance", "fa-bell", "fa-cut", "fa-bath", "fa-bomb", "fa-anchor", "fa-crown"];
+    icons = ["fa-bowling-ball", "fa-ambulance", "fa-anchor", "fa-bath", "fa-bomb", "fa-bell", "fa-cut", "fa-crown"],
+    seconds = 0, minutes = 0, hours = 0, t,
+    timerView = document.querySelector("#timer");
+
+// DUPLICA O TAMANHO DO ARRAY PARA ALIMENTAR OS CARDS
+icons = icons.concat(icons);
 
 // ALIMENTA CARTÕES
 $(".card").each(function (i) {
@@ -17,6 +22,11 @@ $(".card").each(function (i) {
 
 // ADICIONA EVENTO PARA QUANDO ALGUM CARTÃO FOR CLICADO
 $(".card").click(function () {
+    // VERIFICA SE O TIMER ESTA ZERADO E INICIA
+    if (t === undefined) {
+        timer();
+    }
+
     // VERIFICA QUAL PASSO ESTA ACONTECENDO (PRIMEIRO OU SEGUNDO)
     if (step === 1) {
         // VIRA O PRIMEIRO CARTÃO
@@ -28,6 +38,8 @@ $(".card").click(function () {
         showCard($(this))
         // ARMAZENA O SEGUNDO CARTÃO
         cardsSelected[1] = $(this)
+        // VERIFICA RATING
+        checkRating();
         // ATUALIZA TOTAL DE MOVIMENTOS
         updateMoves();
         // AGUARDA ANIMAÇÃO DE FLIP FINALIZAR
@@ -61,8 +73,6 @@ function showCard(card) {
     card.children(":first").removeAttr("hidden");
     // ADICIONA AO CONTADOR DE RODADAS
     step++;
-    // VERIFICA RATING
-    checkRating();
 }
 
 function nextRound() {
@@ -96,7 +106,7 @@ function correctAnimation() {
     }
 }
 
-// ANIMA CARTAS QUANTO ESTÃO ERRADAS
+// ANIMA CARTAS QUANDO ESTÃO ERRADAS
 function wrongAnimation() {
     for (let i = 0; i < cardsSelected.length; i++) {
         cardsSelected[i].removeClass("animated flipInY");
@@ -144,5 +154,33 @@ function isTheEnd() {
         $("#qtMovFinal").text(totalMoves);
         // ATUALIZA QUANTIDADE DE ESTRELAS NO DOM
         $("#qtStarsFinal").text(stars);
+        // PARA O TIMER
+        stopTimer();
     }
+}
+
+// FUNÇÃO PARA CRIAR UM TIMER
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    timerView.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    timer();
+}
+
+// INICIA O TIMER
+function timer() {
+    t = setTimeout(add, 1000);
+}
+
+// PARA O TIMER
+function stopTimer(){
+    clearTimeout(t);
+    document.querySelector("#timerFinal").textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
 }
