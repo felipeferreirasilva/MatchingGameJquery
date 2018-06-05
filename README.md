@@ -1,5 +1,10 @@
-* This website was created for the final project of Udacity Front-End Nanodegree *
+THIS WEBSITE WAS CREATED FOR THE PROJECT OF UDACITY FRONT-END NANODEGREE
 
-It uses only HTML, CSS and JAVASCRIPT (jQuery)
+THE PROJECT USES ONLY HTML, CSS AND JAVASCRIPT (JQUERY).
 
-To win the game you need to match all images behind the cards, at the end of the game, you will see the number of tries that you made and your stars rating.
+TO WIN THE GAME YOU NEED TO MATCH ALL IMAGES BEHING THE CARDS, AT THE END OF THE GAME, YOU WILL SEE THE NUMBER OF TRIES THAT YOU MADE AND YOUR STARS RATING.
+
+RATING:
+3 STARS = 14 MOVES OR LESS
+2 STARS = MORE THAN 14 MOVES AND LESS THAN 20
+1 STARS = MORE THAN 20 MOVES
