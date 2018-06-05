@@ -117,12 +117,12 @@ $("#restartGame, #playAgain").click(function () {
 
 // DIMINUI ESTRELA
 function checkRating() {
-    if (totalMoves === 20) {
+    if (totalMoves === 15) {
         // REMOVE A PRIMEIRA ESTRELA
         $("#star3").removeClass("fas");
         $("#star3").addClass("far animated zoomIn");
         stars--;
-    } else if (totalMoves === 30) {
+    } else if (totalMoves === 20) {
         // REMOVE A SEGUNDA ESTRELA
         $("#star2").removeClass("fas");
         $("#star2").addClass("far animated zoomIn");
